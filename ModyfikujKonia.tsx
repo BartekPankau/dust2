@@ -80,6 +80,7 @@ const ModyfikujKonia: React.FC = () => {
           <div>
             <label htmlFor="imie">Imię konia:</label>
             <input
+                className="custom-input"
               type="text"
               id="imie"
               name="imie"
@@ -94,6 +95,7 @@ const ModyfikujKonia: React.FC = () => {
           <div>
           <label htmlFor="data_urodzenia">Data urodzenia:</label>
           <input
+              className="custom-input"
             type="date"
             id="data_urodzenia"
             name="data_urodzenia"
@@ -106,6 +108,7 @@ const ModyfikujKonia: React.FC = () => {
         <div>
           <label htmlFor="plec">Płeć:</label>
           <select
+              className="custom-select"
             id="plec"
             name="plec"
             value={selectedHorseData.plec}
@@ -121,6 +124,7 @@ const ModyfikujKonia: React.FC = () => {
         <div>
           <label htmlFor="id_wlasciciela">ID właściciela:</label>
           <input
+              className="custom-input"
             type="text"
             id="id_wlasciciela"
             name="id_wlasciciela"
@@ -132,6 +136,7 @@ const ModyfikujKonia: React.FC = () => {
         <div>
           <label htmlFor="wlasciciel">Właściciel:</label>
           <input
+              className="custom-input"
             type="text"
             id="wlasciciel"
             name="wlasciciel"
@@ -144,6 +149,7 @@ const ModyfikujKonia: React.FC = () => {
           Rodowód: <br></br>
           <label htmlFor="v">Imie ojca:</label>
           <input
+              className="custom-input"
             type="text"
             id="v"
             name="v"
@@ -155,6 +161,7 @@ const ModyfikujKonia: React.FC = () => {
         <div>
           <label htmlFor="m">Imie matki:</label>
           <input
+              className="custom-input"
             type="text"
             id="m"
             name="m"
@@ -165,6 +172,7 @@ const ModyfikujKonia: React.FC = () => {
 
           <label htmlFor="mv">/ </label>
           <input
+              className="custom-input"
             type="text"
             id="mv"
             name="mv"
@@ -175,6 +183,7 @@ const ModyfikujKonia: React.FC = () => {
         </div>
           <label htmlFor="kowal">Ostatnia wizyta kowala:</label>
           <input
+              className="custom-input"
             type="date"
             id="kowal"
             name="kowal"
@@ -187,6 +196,7 @@ const ModyfikujKonia: React.FC = () => {
         <div>
           <label htmlFor="ilosc_posilkow">Ilość posiłków:</label>
           <select
+              className="custom-select"
             id="ilosc_posilkow"
             name="ilosc_posilkow"
             value={selectedHorseData.ilosc_posilkow}
@@ -202,6 +212,7 @@ const ModyfikujKonia: React.FC = () => {
         <div>
           <label htmlFor="wielkosc_posilku">Ilość miarek na posiłek:</label>
           <select
+              className="custom-select"
             id="wielkosc_posilku"
             name="wielkosc_posilku"
             value={selectedHorseData.wielkosc_posilku}
@@ -217,6 +228,7 @@ const ModyfikujKonia: React.FC = () => {
         <div>
         <label htmlFor="posilek">Skład posiłku:</label>
           <input
+              className="custom-input"
             type="text"
             id="posilek"
             name="posilek"
@@ -228,6 +240,7 @@ const ModyfikujKonia: React.FC = () => {
           <div>
           <label htmlFor="nr_boksu">Nr boksu:</label>
           <input
+              className="custom-input"
             type="text"
             id="nr_boksu"
             name="nr_boksu"
@@ -239,6 +252,7 @@ const ModyfikujKonia: React.FC = () => {
         <div>
           <label htmlFor="nr_padoku">Nr padoku:</label>
           <input
+              className="custom-input"
             type="text"
             id="nr_padoku"
             name="nr_padoku"
@@ -250,6 +264,7 @@ const ModyfikujKonia: React.FC = () => {
         <div>
             <label htmlFor="nr_treningowy">Nr treningowy:</label>
             <input
+                className="custom-input"
               type="text"
               id="nr_treningowy"
               name="nr_treningowy"
@@ -260,6 +275,7 @@ const ModyfikujKonia: React.FC = () => {
           <div>
             <label htmlFor="nr_hodowlany">Nr hodowlany:</label>
             <input
+                className="custom-input"
               type="text"
               id="nr_hodowlany"
               name="nr_hodowlany"
@@ -267,7 +283,8 @@ const ModyfikujKonia: React.FC = () => {
               onChange={(e) => setSelectedHorseData({ ...selectedHorseData, nr_hodowlany: e.target.value })}
             />
           </div>
-          <button type="submit">Zapisz zmiany</button>
+          <br/>
+          <button type="submit" className="custom-button">Zapisz zmiany</button>
         </form>
       );
     };
@@ -277,6 +294,7 @@ const ModyfikujKonia: React.FC = () => {
         <div>
           <label htmlFor="horse">Wybierz konia do modyfikacji:</label>
           <select
+              className="custom-select"
             id="horse"
             name="horse"
             value={selectedHorseId || ''}
