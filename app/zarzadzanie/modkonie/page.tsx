@@ -1,9 +1,6 @@
 'use client'
 import React from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
 import 'reactjs-popup/dist/index.css'
-import supabase from '/dust-maste2/dust-master/supabaseClient.js';
 import UserForm from '@/UserForm';
 import UsunWiersz from '@/UsunWiersz';
 import ModyfikujKonia from '@/ModyfikujKonia';
