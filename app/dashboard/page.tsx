@@ -75,14 +75,13 @@ export default function page() {
                     </h1>
                     <Kowal/>
                 </div>
-
+                <hr className="border-t-2 border-zinc-200 dark:border-gray-600 lg:w-full my-16 "/>
                 <div>
                     <h1 className="font-bold text-center text-2xl w-auto">
 
                     </h1>
                     <Szczepienie/>
                 </div>
-
 
 
             </div>

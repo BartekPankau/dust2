@@ -43,10 +43,12 @@ const Komentarze: React.FC = () => {
                 value={userId}
                 onChange={(e) => setUserId(e.target.value)}
             />
-            <h2>Twoja ocena w skali 1-6:</h2>
+            <h2>Twoja ocena:</h2>
             <input
                 className="custom-select"
                 type="number"
+                min="0"
+                max="5"
                 placeholder="Ocena:"
                 value={ocenaa}
                 onChange={(e) => setOcenaa(e.target.value)}
