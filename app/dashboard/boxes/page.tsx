@@ -1,69 +1,162 @@
-
+"use client"
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import 'reactjs-popup/dist/index.css'
 import supabase from '@/supabaseClient.js';
-import UserForm from '@/UserForm';
-import UsunWiersz from '@/UsunWiersz';
-import ModyfikujKonia from '@/ModyfikujKonia';
-
-//C:\dust-maste2\dust-master\app\UserForm.tsx
 
 
-const Home = async () => {
 
+let fetchData = async () => {
+    let { data, error } = await supabase
+        .from('horse')
+        .select('*')
+        .eq('nr_boksu', 1)
+        .single()
+
+    return data
+};
+let fetchData2 = async () => {
+    let { data, error } = await supabase
+        .from('horse')
+        .select('*')
+        .eq('nr_boksu', 2)
+        .single()
+
+    return data
+};
+let fetchData3 = async () => {
+    let { data, error } = await supabase
+        .from('horse')
+        .select('*')
+        .eq('nr_boksu', 3)
+        .single()
+
+    return data
+};
+let fetchData4 = async () => {
+    let { data, error } = await supabase
+        .from('horse')
+        .select('*')
+        .eq('nr_boksu', 4)
+        .single()
+
+    return data
+};
+let fetchData5 = async () => {
+    let { data, error } = await supabase
+        .from('horse')
+        .select('*')
+        .eq('nr_boksu', 5)
+        .single()
+
+    return data
+};
+
+export default async function page() {
+    const data = await fetchData()
+    const data2 = await fetchData2()
+    const data3 = await fetchData3()
+    const data4 = await fetchData4()
+    const data5 = await fetchData5()
     return (
-        <main className="flex min-h-screen flex-col items-center justify-between p-24">
-            <div className="columns-1 font-sans border-b px-5 py-4 font-semibold text-lg text-black leading-8 border-gray-500 border-opacity-50 bg-gradient-to-b from-gray-400 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-2 dark:border-gray-600  dark:text-white rounded-3xl content-center m-20">
-                <div>
-                    <h1 className="font-bold text-center text-2xl w-auto">
-                        <div className="h-12 text-xl font-extrabold ">
-                            Dodaj konia do bazy:
-                        </div>
-                    </h1>
-                    <UserForm/>
-                </div>
-            </div>
+        <main className=" min-h-full p-24">
 
 
-            <div className="columns-1 font-sans font-semibold text-lg text-black leading-8 border-b px-5 py-4  border-gray-500 border-opacity-50 bg-gradient-to-b from-gray-400 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-2 dark:border-gray-600  dark:text-white rounded-3xl content-center m-20">
-                <div className="h-12 text-xl text-center font-extrabold ">
-                    Modyfikuj konia w bazie:
-                </div>
-
-                <div>
-                    <h1 className="font-bold text-black text-center text-2xl w-auto">
-
-                    </h1>
-                    <ModyfikujKonia />
-                </div>
-
-            </div>
+            <div className=" flex flex-col gap-4 text-center  lg:mb-0 lg:w-full   lg:text-left">
 
 
-            <div className="columns-1 font-sans font-semibold text-lg text-black leading-8 border-b px-5 py-4  border-gray-500 border-opacity-50 bg-gradient-to-b from-gray-400 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-2 dark:border-gray-600  dark:text-white  rounded-3xl content-center m-20">
-                <div>
-                    <div className="h-12 text-xl text-center font-extrabold ">
-                        Usuń konia z bazy:
+                <Link href="/dashboard/boxes/Box1">
+                    <div
+                        className="group rounded-tl-xl  text-3xl text-justify mx-2 bg-white border-r-2 border-b-2 border-zinc-200 p-5 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-b-2 dark:border-r-2 dark:border-gray-600  "
+                    >
+                        <h2 className="mb-3 text-2xl font-semibold">
+                            1{" "}
+
+                            <span
+                                className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+              -&gt;
+
+            </span>
+                        </h2>
+                        <p className="m-0 max-w-[30ch] text-base opacity-50">
+                            {data.imie}
+                        </p>
                     </div>
-                </div>
+                </Link>
 
-                <div>
-                    <h1 className="font-bold text-center text-2xl w-auto">
+                <Link href="/dashboard/boxes/Box2">
+                    <div
+                        className="group rounded-tl-xl  text-2xl text-justify mx-2 bg-white border-r-2 border-b-2 border-zinc-200 p-5 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-b-2 dark:border-r-2 dark:border-gray-600  "
+                    >
+                        <h2 className="mb-3 text-2xl font-semibold">
+                            2{" "}
+                            <span
+                                className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+              -&gt;
+            </span>
+                        </h2>
+                        <p className="m-0 max-w-[30ch] text-base opacity-50">
+                            {data2.imie}
+                        </p>
+                    </div>
+                </Link>
 
-                    </h1>
-                    <UsunWiersz />
-                </div>
+
+                <Link href="/dashboard/boxes/Box3">
+                    <div
+                        className="group rounded-tl-xl  text-2xl text-justify mx-2 bg-white border-r-2 border-b-2 border-zinc-200 p-5 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-b-2 dark:border-r-2 dark:border-gray-600  "
+                    >
+                        <h2 className="mb-3 text-2xl font-semibold">
+                            3{" "}
+                            <span
+                                className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+              -&gt;
+            </span>
+                        </h2>
+                        <p className="m-0 max-w-[30ch] text-base opacity-50">
+                            {data3.imie}
+                        </p>
+                    </div>
+                </Link>
+
+                <Link href="/dashboard/boxes/Box4">
+                    <div
+                        className="group rounded-tl-xl  text-2xl text-justify mx-2 bg-white border-r-2 border-b-2 border-zinc-200 p-5 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-b-2 dark:border-r-2 dark:border-gray-600  "
+                    >
+                        <h2 className="mb-3 text-2xl font-semibold">
+                            4{" "}
+                            <span
+                                className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+              -&gt;
+            </span>
+                        </h2>
+                        <p className="m-0 max-w-[30ch] text-base opacity-50">
+                            {data4.imie}
+                        </p>
+                    </div>
+                </Link>
+
+                <Link href="/dashboard/boxes/Box5">
+
+                    <div
+                        className="group rounded-tl-xl  text-2xl text-justify mx-2 bg-white border-r-2 border-b-2 border-zinc-200 p-5 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-b-2 dark:border-r-2 dark:border-gray-600  "
+                    >
+                        <h2 className="mb-3 text-2xl font-semibold">
+                            5{" "}
+                            <span
+                                className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+              -&gt;
+            </span>
+                        </h2>
+                        <p className="m-0 max-w-[30ch] text-base opacity-50">
+                            {data5.imie}
+                        </p>
+                    </div>
+                </Link>
 
             </div>
-
-
-
         </main>
 
-
-    )
-}
-
-export default Home;
+    );
+};
