@@ -1,7 +1,7 @@
 "use client";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import "@/globals.css";
 import { supabase } from '@/supabaseClient2.js';
 import React, { useEffect, useState } from 'react';
 import Link from "next/link";
