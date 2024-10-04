@@ -3,9 +3,9 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import 'reactjs-popup/dist/index.css'
-import supabase from './supabaseClient.js'
+import supabase from '@/supabaseClient.js'
 import { useEffect, useState } from 'react'
-import './tabela.css'; // Importowanie pliku CSS
+import '@/tabela.css'; // Importowanie pliku CSS
 
 type TreningData = {
   nr_konia: number;
@@ -24,10 +24,10 @@ const EditableTable: React.FC = () => {
     const fetchColumns = async () => {
       try {
         let { data, error } = await supabase
-          .from('trening')
-          .select('*')
-          .limit(1);
-        
+            .from('trening')
+            .select('*')
+            .limit(1);
+
         if (error) throw error;
 
         if (data && data.length > 0) {
@@ -46,9 +46,9 @@ const EditableTable: React.FC = () => {
   const fetchSuggestions = async (value: string) => {
     try {
       let { data, error } = await supabase
-        .from('trening')
-        .select('*')
-        .ilike('imie', `%${value}%`);
+          .from('trening')
+          .select('*')
+          .ilike('imie', `%${value}%`);
 
       if (error) throw error;
 
@@ -84,9 +84,9 @@ const EditableTable: React.FC = () => {
         console.log('Updated data:', updatedData);
 
         let { error } = await supabase
-          .from('trening')
-          .update(updatedData)
-          .eq('nr_konia', nr_konia);
+            .from('trening')
+            .update(updatedData)
+            .eq('nr_konia', nr_konia);
 
         if (error) throw error;
 
@@ -102,50 +102,51 @@ const EditableTable: React.FC = () => {
   }
 
   return (
-    <div>
-      <input
-        type="text"
-        value={value}
-        onChange={handleChange}
-        placeholder="Type 'imie'"
-      />
-      {suggestions.length > 0 && (
-        <ul className="suggestions">
-          {suggestions.map((suggestion) => (
-            <li key={suggestion.nr_konia} onClick={() => handleSelect(suggestion)}>
-              {suggestion.imie}
-            </li>
-          ))}
-        </ul>
-      )}
-      {selectedRecord && (
-        <div>
-          <table>
-            <thead>
-              <tr>
-                {columns.map((column) => (
-                  <th key={column}>{column}</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                {columns.map((column) => (
-                  <td key={column}>
-                    <input
-                      type="text"
-                      value={selectedRecord[column]}
-                      onChange={(e) => handleInputChange(e, column)}
-                    />
-                  </td>
-                ))}
-              </tr>
-            </tbody>
-          </table>
-          <button onClick={handleSave}>Save</button>
-        </div>
-      )}
-    </div>
+      <div>
+        <input
+            className="custom-select"
+            type="text"
+            value={value}
+            onChange={handleChange}
+            placeholder="Type 'imie'"
+        />
+        {suggestions.length > 0 && (
+            <ul className="suggestions">
+              {suggestions.map((suggestion) => (
+                  <li key={suggestion.nr_konia} onClick={() => handleSelect(suggestion)}>
+                    {suggestion.imie}
+                  </li>
+              ))}
+            </ul>
+        )}
+        {selectedRecord && (
+            <div>
+              <table>
+                <thead>
+                <tr>
+                  {columns.map((column) => (
+                      <th key={column}>{column}</th>
+                  ))}
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  {columns.map((column) => (
+                      <td key={column}>
+                        <input
+                            type="text"
+                            value={selectedRecord[column]}
+                            onChange={(e) => handleInputChange(e, column)}
+                        />
+                      </td>
+                  ))}
+                </tr>
+                </tbody>
+              </table>
+              <button className="custom-button" onClick={handleSave}>Zapisz</button>
+            </div>
+        )}
+      </div>
   );
 };
 
