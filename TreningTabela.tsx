@@ -6,7 +6,7 @@ import 'reactjs-popup/dist/index.css'
 import supabase from './supabaseClient.js'
 import { useEffect, useState } from 'react'
 //import './tabela.css'; // Importowanie pliku CSS
-import 'C:/dust-maste2/dust-master/app/globals.css';
+import '@/globals.css';
 
 type TreningData = {
     [key: string]: any; // Typowanie ogólne dla kolumn
