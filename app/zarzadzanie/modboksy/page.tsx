@@ -20,8 +20,8 @@ const Home = async () => {
 
                 <div>
                     <h1 className="font-bold text-black text-center text-2xl w-auto">
-                    </h1>
                     <ModyfikujKonia />
+                    </h1>
                 </div>
 
             </div>
