@@ -10,11 +10,9 @@ import Login from '@/Login';
 import Wylogowany from '@/Wylogowany';
 import React, { useEffect, useState } from 'react';
 import Link from "next/link";
-
+import ThemeToggleButton from './components/ThemeToggleButton';  // Import przycisku zmiany motywu
 
 const inter = Inter({ subsets: ["latin"] });
-
-
 
 const UserProfile: React.FC = () => {
     const [email, setEmail] = useState<string | null>(null);
@@ -45,16 +43,13 @@ const UserProfile: React.FC = () => {
         </div>
     );
 };
-// export const metadata: Metadata = {
-//   title: "Stable Assistant",
-//  };
+
 export default function RootLayout({
                                        children,
                                    }: Readonly<{
     children: React.ReactNode;
 }>) {
     return (
-
         <html lang="en">
         <head>
             <title>Stable Assistant</title>
@@ -66,7 +61,9 @@ export default function RootLayout({
                 <Link href="/workers"><UserProfile/></Link>
             </div>
             <div className="text-2xl"><Link href="/home">Stable Assistant ♘</Link></div>
-            <div className="float-right">ZMIANA MOTYWU</div>
+            <div className="float-right">
+                <ThemeToggleButton />  {/* Tutaj dodajemy przycisk zmiany motywu */}
+            </div>
         </div>
         <div className="flex flex-row">
             <div
@@ -85,7 +82,7 @@ export default function RootLayout({
                 </Link>
 
                 <Link href="/dashboard/padoki">
-                    <div className="hover:bg-gray-500 pl-2">
+                    <div className="hover:bg-gray-500  pl-2">
                         Padoki
                     </div>
                 </Link>
@@ -96,22 +93,17 @@ export default function RootLayout({
                     </div>
                 </Link>
 
+                <Link href="/zarzadzanie">
+                    <div className="hover:bg-gray-500  pl-2">
+                        Zarządzanie stajnią
+                    </div>
+                </Link>
 
-
-                    <Link href="/zarzadzanie">
-                        <div className="hover:bg-gray-500  pl-2">
-                            Zarządzanie stajnią
-                        </div>
-
-                    </Link>
-                    <Link href="/dashboard/harmonogram">
-                        <div className="hover:bg-gray-500 whitespace-break-spaces pl-2">
-                            Zarządzanie pracownikami
-                        </div>
-                    </Link>
-
-
-
+                <Link href="/dashboard/harmonogram">
+                    <div className="hover:bg-gray-500 whitespace-break-spaces pl-2">
+                        Zarządzanie pracownikami
+                    </div>
+                </Link>
 
                 <Link href="/dashboard/notes">
                     <div className="hover:bg-gray-500 pl-2">
@@ -119,14 +111,11 @@ export default function RootLayout({
                     </div>
                 </Link>
 
-
                 <Link href="/dashboard/zadania">
                     <div className="hover:bg-gray-500 whitespace-break-spaces pl-2">
                         Moje zadania
                     </div>
                 </Link>
-
-
             </div>
 
             <div className=" w-11/12 mt-10">
@@ -138,8 +127,6 @@ export default function RootLayout({
             <div>
                 © All rights reserved
             </div>
-
-
         </div>
         </body>
         </html>
