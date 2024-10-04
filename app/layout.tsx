@@ -1,5 +1,4 @@
 "use client";
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/globals.css";
 import { supabase } from '@/supabaseClient2.js';
@@ -40,9 +39,7 @@ const UserProfile: React.FC = () => {
     </div>
   );
 };
-// export const metadata: Metadata = {
-//   title: "Stable Assistant",
-//  };
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -61,7 +58,6 @@ export default function RootLayout({
                   <Link href="/workers"><UserProfile/></Link>
               </div>
               <div className="text-2xl"> <Link href="/home" >Stable Assistant ♘</Link></div>
-              <div className="float-right">ZMIANA MOTYWU</div>
           </div>
             <div className="flex flex-row">
                 <div
