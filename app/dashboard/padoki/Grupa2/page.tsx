@@ -3,17 +3,17 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import 'reactjs-popup/dist/index.css'
-
+import supabase from '@/supabaseClient.js';
 
 
 
 
 const Home = async () => {
-    
+
 
     return (
         <main className="flex min-h-screen flex-col items-center justify-between p-24">
-            
+
 
 
 
@@ -56,7 +56,7 @@ const Home = async () => {
                 </div>
                 <div>
                     <h1 className="font-bold text-center text-2xl w-auto">
-                        
+
                     </h1>
                     <ul>
                         <h2 className="font-semibold">Data urodzenia:</h2>
@@ -92,4 +92,3 @@ const Home = async () => {
 }
 
 export default Home;
-
