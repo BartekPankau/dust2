@@ -134,13 +134,14 @@ export default async function page() {
             </span>
                   </h2>
                   <p className="m-0 max-w-[30ch] text-sm opacity-50">
-                  {data4.imie} //tutaj błąd jakiś daje
+                      {data4.imie} {/* tutaj błąd jakiś daje */}
                   </p>
+
               </div>
           </Link>
 
           <Link href="/dashboard/boxes/Box5">
-            
+
               <div
                   className=" rounded-lg  border-transparent px-5 py-4 bg-gradient-to-t from-white border-gray-600 bg-gray-400 text-gray-800 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-2 dark:border-gray-600  dark:text-white "
               >
