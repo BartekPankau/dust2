@@ -1,7 +1,8 @@
 "use client";
-
+import Image from 'next/image'
+import Link from 'next/link'
 import 'reactjs-popup/dist/index.css'
-import  supabase  from './supabaseClient.js'
+import  supabase  from '@/supabaseClient.js'
 import React, { useState } from 'react'
 import '@/globals.css';
 
