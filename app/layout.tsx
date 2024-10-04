@@ -1,5 +1,5 @@
 "use client";
-import type { Metadata } from "next";
+
 import { Inter } from "next/font/google";
 import "@/globals.css";
 import Dropdown from "./components/Dropdown";
@@ -10,9 +10,7 @@ import Login from '@/Login';
 import Wylogowany from '@/Wylogowany';
 import React, { useEffect, useState } from 'react';
 import Link from "next/link";
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import ProtectedRoute from '@/ProtectedRoute'; // Komponent, który sprawdza uprawnienia
-import WlascicielStajniTab from "@/WlascicielStajniTab";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -97,7 +95,7 @@ export default function RootLayout({
                         Treningi
                     </div>
                 </Link>
-                <Router>
+
 
 
                     <Link href="/zarzadzanie">
@@ -113,7 +111,7 @@ export default function RootLayout({
                     </Link>
 
 
-                </Router>
+
 
                 <Link href="/dashboard/notes">
                     <div className="hover:bg-gray-500 pl-2">
