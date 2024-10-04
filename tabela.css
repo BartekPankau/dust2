@@ -1,50 +1,52 @@
 table {
-    width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed; /* Zapewnia, że kolumny mają stałą szerokość */
-  }
-  
-  th, td {
-    border: 2px solid #ff0000;
-    text-align: left;
-    padding: 2px;
-    width: 40%; /* Zakładając 4 kolumny, można dostosować według potrzeb */
-    height: fit-content;
-  }
-  
-  thead {
-    background-color: #a1a1a1;
-  }
+  width: 100%;
+  word-wrap: normal;
+  border-collapse: collapse;
+  table-layout: fixed; /* Zapewnia, że kolumny mają stałą szerokość */
+}
 
-  
-  tbody tr:nth-child(even) {
-    background-color: #a1a1a1;
-  }
+th, td {
+  border: 1px solid #7c7c7c;
+  text-align: left;
+  padding: 2px;
+  white-space: nowrap;
+  height: fit-content;
 
- 
-  
-  input {
-    width: 100%;
-    box-sizing: border-box;
-  }
-  
-  .suggestions {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    border: 1px solid #000;
-    max-height: 150px;
-    overflow-y: auto;
-    background-color: white;
-  }
-  
-  .suggestions li {
-    padding: 8px;
-    background-color: #878787;
-    cursor: pointer;
-  }
-  
-  .suggestions li:hover {
-    color: azure;
-    background-color: #606060;
-  }
+}
+
+thead {
+  background-color: lightgrey;
+  color: black;
+}
+
+
+tbody tr:nth-child(even) {
+  background-color: lightgrey;
+  color: black;
+}
+
+input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.suggestions {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #000;
+  max-height: 150px;
+  overflow-y: auto;
+  background-color: lightgrey;
+}
+
+.suggestions li {
+  padding: 8px;
+  background-color: lightgrey;
+  cursor: pointer;
+}
+
+.suggestions li:hover {
+  color: azure;
+  background-color: #888888;
+}
