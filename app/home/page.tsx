@@ -1,5 +1,7 @@
 import Image from "next/image";
 import {text} from "node:stream/consumers";
+import Komentarze from "@/Komentarze";
+import React from "react";
 
 
 
@@ -100,23 +102,24 @@ export default function page() {
                     <h1>Zostaw komentarz</h1>
                 </div>
                 <div>
-                    <div className="p-4 max-w-md mx-auto">
-                        <label htmlFor="text-input" className="block text-lg font-medium text-gray-700 mb-2 dark:text-white">
-                            Wprowadź tekst:
-                        </label>
-                        <input
-                            id="text-input"
-                            type="text"
-                            className="w-full p-2  border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-zinc-800"
-                            placeholder="Wpisz coś..."
-                        />
+                    <div
+                        className="content-center ml-8 w-full grid grid-cols-1 gap-10 rounded-tl-xl  text-xl text-justify mb-10 bg-white border-r-2 border-b-2 border-zinc-200 p-5 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-b-2 dark:border-r-2 dark:border-gray-600   ">
+                        <div>
+                            <div className="h-12 text-xl text-center font-extrabold ">
+                                Komentarze:
+                            </div>
+                        </div>
+
+                        <div>
+                            <h1 className="font-bold text-center text-2xl w-auto">
+
+                            </h1>
+                            <Komentarze/>
+                        </div>
                     </div>
                 </div>
 
             </div>
-
-
-
 
 
         </main>

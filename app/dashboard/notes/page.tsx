@@ -63,21 +63,7 @@ const Home = async () => {
                 </div>
             </div>
 
-            <div
-                className="content-center ml-8 w-full grid grid-cols-1 gap-10 rounded-tl-xl  text-xl text-justify mb-10 bg-white border-r-2 border-b-2 border-zinc-200 p-5 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-b-2 dark:border-r-2 dark:border-gray-600   ">
-                <div>
-                    <div className="h-12 text-xl text-center font-extrabold ">
-                        Komentarze:
-                    </div>
-                </div>
 
-                <div>
-                    <h1 className="font-bold text-center text-2xl w-auto">
-
-                    </h1>
-                    <Komentarze />
-                </div>
-            </div>
 
         </main>
 
