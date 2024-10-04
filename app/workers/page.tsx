@@ -1,3 +1,4 @@
+
 "use client";
 import Image from 'next/image'
 import Link from 'next/link'
@@ -62,18 +63,18 @@ const App: React.FC = () => {
                 return (
                     <div className="flex items-center justify-center mt-6">
 
-                    <div className=" font-sans text-center font-semibold justify-center w-72 p-2 text-xl border-b rounded-2xl border-gray-500 border-opacity-50 bg-gradient-to-b from-gray-400 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-2 dark:border-gray-600  dark:text-white">
-                        {userData==null && (
-                            
-                            <button onClick={() => setPage('login')}>Logowanie</button>
-                        )}
-                        
-                        
-                            <h1>{userName !== null ? `Witaj: ${userName}` : ''}</h1>      
-                        {userData && (
-                            <button onClick={handleLogout}>Wyloguj</button>
-                        )}
-                    </div>
+                        <div className=" font-sans text-center font-semibold justify-center w-72 p-2 text-xl border-b rounded-2xl border-gray-500 border-opacity-50 bg-gradient-to-b from-gray-400 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-2 dark:border-gray-600  dark:text-white">
+                            {userData==null && (
+
+                                <button onClick={() => setPage('login')}>Logowanie</button>
+                            )}
+
+
+                            <h1>{userName !== null ? `Witaj: ${userName}` : ''}</h1>
+                            {userData && (
+                                <button onClick={handleLogout}>Wyloguj</button>
+                            )}
+                        </div>
                     </div>
                 );
 
