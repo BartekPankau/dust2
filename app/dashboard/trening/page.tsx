@@ -1,13 +1,8 @@
 "use client"
 import React from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import Popup from "reactjs-popup";
 import 'reactjs-popup/dist/index.css'
-import supabase from '/dust-maste2/dust-master/supabaseClient.js';
-import { useEffect, useState } from 'react';
-import TreningTabela from '/dust-maste2/dust-master/TreningTabela';
-import EditableTable from '/dust-maste2/dust-master/EditableTable';
+import TreningTabela from '@/TreningTabela';
+import EditableTable from '@/EditableTable';
 
 
 
