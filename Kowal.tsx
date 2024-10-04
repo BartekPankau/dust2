@@ -44,8 +44,8 @@ function Kowal() {
   
     return (
       <div className="italic" >
-        <h1 className="font-bold">Filtered Records</h1>
-        Termin kowala w tym tygodniu:
+        <h1 className="font-bold">Termin kowala w tym tygodniu:</h1>
+
         {loading && <p>Loading...</p>}
         {error && <p>{error}</p>}
         <ul>
