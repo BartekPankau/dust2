@@ -66,7 +66,7 @@ export default function RootLayout({
             <div>
                 <Link href="/workers"><UserProfile/></Link>
             </div>
-            <div className="float-right">ZMIANA MOTYWU</div>
+           
         </div>
         <div className="flex flex-row">
             <div
